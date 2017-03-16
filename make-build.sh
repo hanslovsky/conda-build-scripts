@@ -1,9 +1,14 @@
 #!/bin/sh
 
-PYTHON=${PYTHON:-3.6}
+PACKAGE=$1
+shift
+PYTHON=$1
+shift
+
+
 
 for REVISION in "$@"; do
-    CMD="conda build build-$REVISION --python=$PYTHON"
+    CMD="conda build $PACKAGE/build-$REVISION --python=$PYTHON"
     if [ -n "$OUTPUT" ]; then
         CMD="${CMD} --output"
     fi
