@@ -3,5 +3,9 @@
 PYTHON=${PYTHON:-3.6}
 
 for REVISION in "$@"; do
-    conda build build-$REVISION --python=$PYTHON
+    CMD="conda build build-$REVISION --python=$PYTHON"
+    if [ -n "$OUTPUT" ]; then
+        CMD="${CMD} --output"
+    fi
+    $CMD
 done
