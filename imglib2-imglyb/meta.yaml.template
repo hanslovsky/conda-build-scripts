@@ -25,7 +25,6 @@ requirements:
    - python {{PY_VER}}*
    - numpy
    - pyjnius
-   - vigra
 
 about:
   home: https://github.com/hanslovsky/imglib2-imglyb
