@@ -20,6 +20,7 @@ requirements:
  # currently requires maven on building host. Once all dependencies are present in maven repositories AND a usable maven conda package exists, use conda maven for build.
  build:
    - openjdk >=8
+   - python {{PY_VER}}*
  run:
    - openjdk >=8
    - python {{PY_VER}}*
