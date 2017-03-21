@@ -3,7 +3,8 @@ mkdir -p $IMGLYB_SHARE
 
 
 mvn clean package
-JAR_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -v 'INFO')
+# Thanks @ctrueden for the following line using xmllint to extract the artifact version!
+JAR_VERSION=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' pom.xml)
 JAR_NAME=imglib2-imglyb-${JAR_VERSION}.jar
 JAR_PATH=target/${JAR_NAME}
 cp ${JAR_PATH} ${IMGLYB_SHARE}

@@ -21,6 +21,7 @@ requirements:
  build:
    - openjdk >=8
    - python {{PY_VER}}*
+   - libxml2
  run:
    - openjdk >=8
    - python {{PY_VER}}*
