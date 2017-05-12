@@ -12,7 +12,7 @@ shift
 for REVISION in "$@"; do
     TARGET=$PACKAGE/build-${REVISION}
     if [ -e "$TARGET" ]; then
-        echo File or directory $TARGET exists; skipping...
+        echo "File or directory $TARGET exists; skipping..."
     else
         mkdir -p $TARGET
         sed "s/GIT_REVISION/\"${REVISION}\"/" $PACKAGE/$TEMPLATE > $TARGET/$META
