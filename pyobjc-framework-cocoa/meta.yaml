@@ -1,0 +1,72 @@
+package:
+  name: pyobjc-framework-cocoa
+  version: "3.2.1"
+
+source:
+  fn: pyobjc-framework-Cocoa-3.2.1.tar.gz
+  url: https://pypi.python.org/packages/f2/91/9a1847a442a8cd9f7e7ed183561c57b8644fd582f7ede0c5c3dc81407533/pyobjc-framework-Cocoa-3.2.1.tar.gz
+  md5: 751cea8fa10e60cd577512a653d86120
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+
+  # this is changed from default to prevent an error that told me to 
+  #   change this from the default to prevent an error (ie, I have 
+  #   no idea why it's needed)
+  preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pyobjc-framework-cocoa = pyobjc-framework-cocoa:main
+    #
+    # Would create an entry point called pyobjc-framework-cocoa that calls pyobjc-framework-cocoa.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pyobjc-core >=3.2.1
+
+  run:
+    - python
+    - pyobjc-core >=3.2.1
+
+test:
+  # Python imports
+  imports:
+    - AppKit
+    - Cocoa
+    - CoreFoundation
+    - Foundation
+    - PyObjCTools
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://pyobjc.sourceforge.net
+  license: MIT License
+  summary: 'Wrappers for the Cocoa frameworks on Mac OS X'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
