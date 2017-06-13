@@ -27,6 +27,8 @@ requirements:
    - python {{PY_VER}}*
    - numpy
    - pyjnius
+   - pyobjc-core              # [osx]
+   - pyobjc-framework-cocoa   # [osx]
 
 about:
   home: https://github.com/hanslovsky/imglib2-imglyb
