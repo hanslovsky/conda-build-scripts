@@ -1,0 +1,11 @@
+@echo off
+ECHO %*
+SET PACKAGE=%1
+SHIFT
+SET PYTHON=%1
+SHIFT
+SET REVISION=%1
+SHIFT
+:: ECHO %* %REVISION% %PYTHON% %PACKAGE%
+
+conda build %PACKAGE%/build-%REVISION% --python=%PYTHON%
