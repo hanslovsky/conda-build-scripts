@@ -3,7 +3,7 @@ mkdir -p $PYJNIUS_SHARE
 
 make
 make tests
-python setup.py install
+pip install --no-deps .
 
 
 cp build/pyjnius.jar $PYJNIUS_SHARE

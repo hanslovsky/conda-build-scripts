@@ -16,7 +16,7 @@ SET JAR_PATH=target\%JAR_NAME%
 copy %JAR_PATH% %IMGLYB_SHARE%
 if errorlevel 1 exit 1
 
-%PYTHON% setup.py install --prefix=%PREFIX%
+pip install --no-deps .
 if errorlevel 1 exit 1
 
 echo %JAVA_HOME%

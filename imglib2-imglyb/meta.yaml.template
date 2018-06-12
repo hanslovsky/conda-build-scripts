@@ -23,6 +23,7 @@ requirements:
    - python {{PY_VER}}*
    - libxml2                  # [linux]
    - libxml2                  # [osx]
+   - pip
  run:
    - openjdk >=8
    - python {{PY_VER}}*

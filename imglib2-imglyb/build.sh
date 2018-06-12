@@ -9,7 +9,7 @@ JAR_NAME=imglib2-imglyb-${JAR_VERSION}.jar
 JAR_PATH=target/${JAR_NAME}
 cp ${JAR_PATH} ${IMGLYB_SHARE}
 
-python setup.py install --prefix=$PREFIX
+pip install --no-deps .
 
 
 echo $JAVA_HOME

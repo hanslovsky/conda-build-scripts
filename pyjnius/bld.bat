@@ -20,7 +20,7 @@ if errorlevel 1 exit 1
 
 :: install and copy
 cd ..
-"%PYTHON%" setup.py install
+pip install --no-deps .
 if errorlevel 1 exit 1
 copy build\pyjnius.jar "%PYJNIUS_SHARE%"
 if errorlevel 1 exit 1
