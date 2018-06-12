@@ -24,6 +24,7 @@ requirements:
    - cython
    - six >=1.7.0
    - nose
+   - ant
  run:
    - openjdk >=8
    - python {{PY_VER}}*
