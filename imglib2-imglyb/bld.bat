@@ -1,7 +1,7 @@
 SET IMGLYB_SHARE=%PREFIX%\share\imglyb
 mkdir %IMGLYB_SHARE%
 
-call mvn clean package
+call mvn -Dmaven.repo.local=%cd%\.m2\repository clean package
 @echo on
 if errorlevel 1 exit 1
 :: found this to get version from pom.xml:

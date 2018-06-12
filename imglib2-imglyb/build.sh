@@ -2,7 +2,7 @@ IMGLYB_SHARE=$PREFIX/share/imglyb
 mkdir -p $IMGLYB_SHARE
 
 
-mvn clean package
+mvn -Dmaven.repo.local=$PWD/.m2/repository clean package
 # Thanks @ctrueden for the following line using xmllint to extract the artifact version!
 JAR_VERSION=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' pom.xml)
 JAR_NAME=imglib2-imglyb-${JAR_VERSION}.jar
