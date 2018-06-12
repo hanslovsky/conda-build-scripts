@@ -18,6 +18,8 @@ build:
   string: py{{py}}_{{PKG_BUILDNUM}}
   noarch: python
   script: pip install --no-deps .
+  entry_points:
+    - convert-schedule = sportsplex.convert_schedule:main
 
 requirements:
  build:
