@@ -15,14 +15,23 @@ source:
 
 build:
   number: 0
+  noarch: python
+  script: pip install --no-deps .
+  entry_points:
+    - imglyb-examples.butterfly = imglyb_examples.butterfly:main
+    - imglyb-examples.bdv-hello-world = imglyb_examples.bdv_hello_world:main'
+    - imglyb-examples.bdv-painter = imglyb_examples.bdv_painter:main
+    - imglyb-examples.qt-awt = imglyb_examples.qt_awt:main
+    - imglyb-examples.views-stack = imglyb_examples.views_stack:main
 
 requirements:
  # currently requires maven on building host. Once all dependencies are present in maven repositories AND a usable maven conda package exists, use conda maven for build.
- build:
-   - python {{PY_VER}}*
+ host:
+   - python
+   - pip
  run:
    - openjdk >=8
-   - python {{PY_VER}}*
+   - python
    - numpy
    - pyjnius
    - imglib2-imglyb
