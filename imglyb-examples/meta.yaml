@@ -19,7 +19,7 @@ build:
   script: pip install --no-deps .
   entry_points:
     - imglyb-examples.butterfly = imglyb_examples.butterfly:main
-    - imglyb-examples.bdv-hello-world = imglyb_examples.bdv_hello_world:main'
+    - imglyb-examples.bdv-hello-world = imglyb_examples.bdv_hello_world:main
     - imglyb-examples.bdv-painter = imglyb_examples.bdv_painter:main
     - imglyb-examples.qt-awt = imglyb_examples.qt_awt:main
     - imglyb-examples.views-stack = imglyb_examples.views_stack:main
