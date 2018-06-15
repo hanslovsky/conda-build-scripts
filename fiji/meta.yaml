@@ -1,0 +1,18 @@
+package:
+  name: fiji
+
+  version: rolling
+
+source:
+  url: https://downloads.imagej.net/fiji/latest/fiji-nojre.zip
+  folder: Fiji.app
+
+build:
+  number: 0
+  # noarch: python
+
+requirements:
+ run:
+   - openjdk >=8
+about:
+  home: https://github.com/hanslovsky/imglyb-examples
