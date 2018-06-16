@@ -10,8 +10,8 @@ MOVE Fiji.app %PREFIX%\share\Fiji.app
 
 IF NOT EXIST %PREFIX%\bin MKDIR %PREFIX%\bin
 MKLINK "%PREFIX%\bin\ImageJ-win64.exe" "%PREFIX%\share\Fiji.app\ImageJ-win64.exe"
-MKLINK "%PREFIX%\bin\imagej" "%PREFIX%\bin\ImageJ-win64.exe"
-MKLINK "%PREFIX%\bin\fiji" "%PREFIX%\bin\ImageJ-win64.exe"
+MKLINK "%PREFIX%\bin\imagej" "ImageJ-win64.exe"
+MKLINK "%PREFIX%\bin\fiji" "ImageJ-win64.exe"
 
 
 
