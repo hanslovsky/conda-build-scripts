@@ -19,11 +19,6 @@ do
     cp "${RECIPE_DIR}/${FILENAME}" "${PREFIX}/etc/conda/${TARGET_DIR}/${PKG_NAME}_${FILENAME}"
 done
 
-ls "${RECIPE_DIR}"
-ls "${PREFIX}"
-ls .
-
-
 mkdir -p "${PREFIX}/share"
 mv "Fiji.app" "${PREFIX}/share/Fiji.app"
 
