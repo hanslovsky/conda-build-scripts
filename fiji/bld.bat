@@ -9,9 +9,9 @@ IF NOT EXIST %PREFIX%\share MKDIR %PREFIX%\share
 MOVE Fiji.app %PREFIX%\share\Fiji.app
 
 IF NOT EXIST %PREFIX%\bin MKDIR %PREFIX%\bin
-MKLINK "%PREFIX%\bin\ImageJ-win64.exe" "%PREFIX%\share\Fiji.app\ImageJ-win64.exe"
-MKLINK "%PREFIX%\bin\imagej" "%PREFIX%\bin\ImageJ-win64.exe"
-MKLINK "%PREFIX%\bin\fiji" "%PREFIX%\bin\ImageJ-win64.exe"
+COPY "%PREFIX%\share\Fiji.app\ImageJ-win64.exe" "%PREFIX%\bin\ImageJ-win64.exe"
+COPY "%PREFIX%\bin\ImageJ-win64.exe" "%PREFIX%\bin\imagej"
+COPY "%PREFIX%\bin\ImageJ-win64.exe" "%PREFIX%\bin\fiji"
 
 
 
