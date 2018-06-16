@@ -5,10 +5,10 @@ FOR %%F IN (activate deactivate) DO (
     COPY %RECIPE_DIR%\%%F.bat %PREFIX%\etc\conda\%%F.d\%PKG_NAME%_%%F.bat
 )
 
-IF NOT EXISTS %PREFIX%\share MKDIR %PREFIX%\share
+IF NOT EXIST %PREFIX%\share MKDIR %PREFIX%\share
 MOVE Fiji.app %PREFIX%/share/Fiji.app
 
-IF NOT EXISTS %PREFIX%\bin MKDIR %PREFIX%\bin
+IF NOT EXIST %PREFIX%\bin MKDIR %PREFIX%\bin
 MKLINK "${PREFIX}/bin/${IMAGEJ}" "${PREFIX}/share/Fiji.app/${IMAGEJ}"
 MKLINK "${PREFIX}/bin/imagej" "${PREFIX}/bin/${IMAGEJ}"
 MKLINK "${PREFIX}/bin/fiji" "${PREFIX}/bin/${IMAGEJ}"
