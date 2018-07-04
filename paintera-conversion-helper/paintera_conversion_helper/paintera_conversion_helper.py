@@ -10,7 +10,7 @@ repositories = {
 def jrun_paintera_conversion_helper():
     repository_strings = ['-r'] + ['{}={}'.format(k, v) for (k, v) in repositories.items()]
     endpoint           = ['org.janelia.saalfeldlab:paintera-conversion-helper:0.1.0']
-    spark_master       = ['-D{}'.format(os.getenv('SPARK_MASTER', 'spark.master=local[*]'))]
+    spark_master       = ['-Dspark.master={}'.format(os.getenv('SPARK_MASTER', 'local[*]'))]
     argv               = repository_strings + spark_master + endpoint + sys.argv[1:]
 
 
