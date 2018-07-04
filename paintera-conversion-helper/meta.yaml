@@ -1,0 +1,25 @@
+package:
+  name: paintera-conversion-helper
+
+  version: 0.1.0
+
+source:
+  path: paintera_conversion_helper
+
+build:
+  number: 0
+  noarch: python
+  script: pip install --no-deps .
+  entry_points:
+    - paintera-conversion-helper = paintera_conversion_helper:jrun_paintera_conversion_helper
+
+requirements:
+ host:
+   - python
+   - pip
+ run:
+   - python
+   - jrun
+   
+about:
+  home: https://github.com/saalfeldlab/paintera-conversion-helper
