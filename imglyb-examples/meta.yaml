@@ -30,11 +30,10 @@ requirements:
    - python
    - pip
  run:
-   - openjdk >=8
    - python
    - numpy
    - pyjnius
-   - imglib2-imglyb
+   - imglyb
    - scikit-image
 about:
   home: https://github.com/hanslovsky/imglyb-examples
