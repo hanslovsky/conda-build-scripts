@@ -1,0 +1,29 @@
+package:
+  name: imglyb
+  version: 0.1.0
+
+source:
+  git_url: https://github.com/hanslovsky/imglyb
+  git_rev: 0.1.0
+
+build:
+  number: 0
+  noarch: python
+  script: pip install --no-deps .
+
+requirements:
+ build:
+   - pip
+ run:
+   # require openjdk and maven? I'd rather have those as optional dependencies
+   # - openjdk >=8
+   # - maven
+   - python {{PY_VER}}*
+   - numpy
+   - pyjnius
+   - jrun
+   - pyobjc-core              # [osx]
+   - pyobjc-framework-cocoa   # [osx]
+
+about:
+  home: https://github.com/hanslovsky/imglyb
