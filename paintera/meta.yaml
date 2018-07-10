@@ -20,6 +20,7 @@ requirements:
  run:
    - python
    - jrun
+   - psutil
    
 about:
   home: https://github.com/saalfeldlab/paintera
