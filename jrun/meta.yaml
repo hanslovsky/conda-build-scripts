@@ -5,7 +5,7 @@ package:
 
 source:
   git_url: https://github.com/hanslovsky/jrun
-  git_rev: 4602606
+  git_rev: b35fe6c
 
 build:
   number: 0
