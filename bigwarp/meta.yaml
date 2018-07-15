@@ -1,0 +1,25 @@
+package:
+  name: bigwarp
+  version: 3.1.2dev
+
+source:
+  path: jrun_bigwarp
+
+build:
+  number: 0
+  noarch: python
+  script: pip install --no-deps .
+  entry_points:
+    - bigwarp = jrun_bigwarp:bigwarp
+
+requirements:
+ host:
+   - python
+   - pip
+ run:
+   - python
+   - jrun
+   - psutil
+
+about:
+  home: https://github.com/saalfeldlab/bigwarp
