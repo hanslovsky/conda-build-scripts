@@ -1,0 +1,34 @@
+package:
+  name: n5-spark
+  version: 3.0.0
+
+source:
+  path: jrun_n5-spark
+
+build:
+  number: 0
+  noarch: python
+  script: pip install --no-deps .
+  entry_points:
+    - n5-convert                       = jrun_n5_spark:n5_convert
+    - n5-downsample-label              = jrun_n5_spark:n5_downsample_label
+    - n5-downsample-offset             = jrun_n5_spark:n5_downsample_offset
+    - n5-downsample                    = jrun_n5_spark:n5_downsample
+    - n5-mips                          = jrun_n5_spark:n5_mips        
+    - n5-remove                        = jrun_n5_spark:n5_remove
+    - n5-scale-pyramid-nonisotropic-3d = jrun_n5_spark:n5_scale_pyramid_nonisotropic_3d
+    - n5-scale-pyramid-offset          = jrun_n5_spark:n5_scale_pyramid_offset
+    - n5-scale-pyramid                 = jrun_n5_spark:n5_scale_pyramid
+    - n5-slice-tiff                    = jrun_n5_spark:n5_slice_tiff
+
+requirements:
+ host:
+   - python
+   - pip
+ run:
+   - python
+   - jrun
+   - psutil
+
+about:
+  home: https://github.com/saalfeldlab/n5-spark
