@@ -1,0 +1,26 @@
+package:
+  name: bigcat
+
+  version: 0.0.3beta1
+
+source:
+  path: jrun_bigcat
+
+build:
+  number: 0
+  noarch: python
+  script: pip install --no-deps .
+  entry_points:
+    - bigcat = jrun_bigcat:jrun_bigcat
+
+requirements:
+ host:
+   - python
+   - pip
+ run:
+   - python
+   - jrun
+   - psutil
+
+about:
+  home: https://github.com/saalfeldlab/bigcat
