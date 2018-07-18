@@ -1,0 +1,30 @@
+package:
+  name: payntera
+  version: 0.1.0
+
+source:
+  git_url: https://github.com/saalfeldlab/payntera
+  git_rev: 0.1.0
+
+build:
+  number: 0
+  noarch: python
+  script: pip install --no-deps .
+
+requirements:
+ build:
+   - pip
+ run:
+   # require openjdk and maven? I'd rather have those as optional dependencies
+   # - openjdk >=8
+   # - maven
+   - python {{PY_VER}}*
+   - numpy
+   - pyjnius
+   - jrun
+   - imglyb
+   - pyobjc-core              # [osx]
+   - pyobjc-framework-cocoa   # [osx]
+
+about:
+  home: https://github.com/saalfeldlab/payntera
