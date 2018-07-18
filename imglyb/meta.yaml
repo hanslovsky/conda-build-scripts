@@ -3,7 +3,7 @@ package:
   version: 0.2.2
 
 source:
-  git_url: https://github.com/hanslovsky/imglyb
+  git_url: https://github.com/imglib/imglyb
   git_rev: 0.2.2
 
 build:
@@ -26,4 +26,4 @@ requirements:
    - pyobjc-framework-cocoa   # [osx]
 
 about:
-  home: https://github.com/hanslovsky/imglyb
+  home: https://github.com/imglib/imglyb
