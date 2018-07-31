@@ -35,7 +35,7 @@ def jrun_paintera():
     double_dash_index  = [i for (i, arg) in enumerate(argv) if arg == '--'][0] if '--' in argv else -1
     jrun_and_jvm_argv  = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jrunrc']
     repository_strings = ['-r'] + ['{}={}'.format(k, v) for (k, v) in repositories.items()]
-    endpoint           = ['org.janelia.saalfeldlab:paintera:0.2.2+{}'.format(os.getenv('PAINTERA_SLF4J_BINDING', 'org.slf4j:slf4j-simple'))]
+    endpoint           = ['org.janelia.saalfeldlab:paintera:0.2.3+{}'.format(os.getenv('PAINTERA_SLF4J_BINDING', 'org.slf4j:slf4j-simple'))]
     paintera_argv      = argv if double_dash_index < 0 else argv[double_dash_index+1:]
     argv               = add_jvm_args_as_necessary(jrun_and_jvm_argv) + repository_strings + endpoint + paintera_argv
 
