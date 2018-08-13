@@ -11,7 +11,8 @@ setup(
     py_modules=['paintera'],
     entry_points={
         'console_scripts': [
-            'paintera=paintera:jrun_paintera'
+            'paintera=paintera:jrun_paintera',
+            'paintera-conversion-helper=paintera:jrun_paintera_conversion_helper'
         ]
     },
 )

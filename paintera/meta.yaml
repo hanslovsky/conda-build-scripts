@@ -7,11 +7,12 @@ source:
   path: paintera
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: pip install --no-deps .
   entry_points:
-    - paintera = paintera:jrun_paintera
+    - paintera                   = paintera:jrun_paintera
+    - paintera-conversion-helper = paintera:jrun_paintera_conversion_helper
 
 requirements:
  host:

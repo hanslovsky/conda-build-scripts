@@ -3,15 +3,19 @@ import os
 import psutil
 import sys
 
+__paintera_version__                   = '0.2.3'
+__paintera_conversion_helper_version__ = '0.2.0'
+__slf4j_version__                      = '1.7.25'
+
 repositories = {
     'saalfeldlab'   : 'https://saalfeldlab.github.io/maven',
     'imagej.public' : 'https://maven.imagej.net/content/groups/public'
     }
 
-def add_jvm_args_as_necessary(argv):
+def add_jvm_args_as_necessary(argv, set_gc_option=True):
     gc_option = '-XX:+UseConcMarkSweepGC'
 
-    if not gc_option in argv:
+    if set_gc_option and not gc_option in argv:
         argv += [gc_option]
 
     for arg in argv:
@@ -35,9 +39,21 @@ def jrun_paintera():
     double_dash_index  = [i for (i, arg) in enumerate(argv) if arg == '--'][0] if '--' in argv else -1
     jrun_and_jvm_argv  = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jrunrc']
     repository_strings = ['-r'] + ['{}={}'.format(k, v) for (k, v) in repositories.items()]
-    endpoint           = ['org.janelia.saalfeldlab:paintera:0.2.3+{}'.format(os.getenv('PAINTERA_SLF4J_BINDING', 'org.slf4j:slf4j-simple'))]
+    endpoint           = ['org.janelia.saalfeldlab:paintera:{}+{}'.format(__paintera_version__, os.getenv('PAINTERA_SLF4J_BINDING', 'org.slf4j:slf4j-simple:{}'.format(__slf4j_version__)))]
     paintera_argv      = argv if double_dash_index < 0 else argv[double_dash_index+1:]
-    argv               = add_jvm_args_as_necessary(jrun_and_jvm_argv) + repository_strings + endpoint + paintera_argv
+    argv               = add_jvm_args_as_necessary(jrun_and_jvm_argv, set_gc_option=True) + repository_strings + endpoint + paintera_argv
+
+    jrun.jrun.jrun_main(argv)
+
+def jrun_paintera_conversion_helper():
+    argv                   = sys.argv[1:]
+    double_dash_index      = [i for (i, arg) in enumerate(argv) if arg == '--'][0] if '--' in argv else -1
+    jrun_and_jvm_argv      = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jrunrc']
+    repository_strings     = ['-r'] + ['{}={}'.format(k, v) for (k, v) in repositories.items()]
+    endpoint               = ['org.janelia.saalfeldlab:paintera-conversion-helper:{}'.format(__paintera_conversion_helper_version__)]
+    spark_master           = ['-Dspark.master={}'.format(os.getenv('SPARK_MASTER', 'local[*]'))]
+    conversion_helper_argv = argv if double_dash_index < 0 else argv[double_dash_index+1:]
+    argv                   = add_jvm_args_as_necessary(jrun_and_jvm_argv + spark_master, set_gc_option=True) + repository_strings + endpoint + conversion_helper_argv
 
     jrun.jrun.jrun_main(argv)
     
