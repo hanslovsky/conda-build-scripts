@@ -3,7 +3,7 @@ import os
 import psutil
 import sys
 
-__paintera_version__                   = '0.2.5'
+__paintera_version__                   = '0.3.0'
 __paintera_conversion_helper_version__ = '0.3.0'
 __slf4j_version__                      = '1.7.25'
 
