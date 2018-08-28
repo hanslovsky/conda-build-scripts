@@ -3,7 +3,7 @@ from distutils.command.build_py import build_py
 
 setup(
     name='jrun-paintera',
-    version='0.3.0',
+    version='0.4.0',
     author='Philipp Hanslovsky',
     author_email='hanslovskyp@janelia.hhmi.org',
     description='paintera',
@@ -12,6 +12,7 @@ setup(
     entry_points={
         'console_scripts': [
             'paintera=paintera:jrun_paintera',
+            'paintera-show-container=paintera:jrun_paintera_show_container',
             'paintera-conversion-helper=paintera:jrun_paintera_conversion_helper'
         ]
     },
