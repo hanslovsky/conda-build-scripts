@@ -5,10 +5,10 @@ package:
 
 source:
   git_url: https://github.com/hanslovsky/jrun
-  git_rev: 0caec68
+  git_rev: b67ab0a
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: pip install --no-deps .
   entry_points:
