@@ -1,7 +1,7 @@
 package:
   name: paintera
 
-  version: 0.8.0
+  version: 0.8.1
 
 source:
   path: paintera
@@ -13,7 +13,6 @@ build:
   entry_points:
     - paintera                   = paintera:jrun_paintera
     - paintera-show-container    = paintera:jrun_paintera_show_container
-    - paintera-conversion-helper = paintera:jrun_paintera_conversion_helper
 
 requirements:
  host:
@@ -23,6 +22,7 @@ requirements:
    - python
    - jrun
    - psutil
+   - paintera-conversion-helper >=0.4.0
    
 about:
   home: https://github.com/saalfeldlab/paintera
