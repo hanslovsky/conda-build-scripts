@@ -7,7 +7,7 @@ source:
   path: paintera_conversion_helper
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: pip install --no-deps .
   entry_points:
