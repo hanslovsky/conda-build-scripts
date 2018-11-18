@@ -1,10 +1,10 @@
 package:
   name: imglyb
-  version: 0.3.3_dev
+  version: 0.3.4
 
 source:
   git_url: https://github.com/imglib/imglyb
-  git_rev: 5248c122a2ee1ab528fd9ec70700433a43602f85
+  git_rev: 0.3.4
 
 build:
   number: 0
