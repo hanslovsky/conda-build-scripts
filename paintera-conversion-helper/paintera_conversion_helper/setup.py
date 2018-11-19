@@ -2,7 +2,7 @@ from distutils.core import setup
 from distutils.command.build_py import build_py
 
 setup(
-    name='jrun-paintera-conversion-helper',
+    name='paintera-conversion-helper',
     version='0.4.0',
     author='Philipp Hanslovsky',
     author_email='hanslovskyp@janelia.hhmi.org',
@@ -11,7 +11,8 @@ setup(
     py_modules=['paintera_conversion_helper'],
     entry_points={
         'console_scripts': [
-            'paintera-conversion-helper=paintera_conversion_helper:jrun_paintera_conversion_helper'
+            'paintera-conversion-helper=paintera_conversion_helper:jgo_paintera_conversion_helper'
         ]
     },
+    install_requires=['jgo', 'psutil']
 )
