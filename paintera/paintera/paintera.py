@@ -38,7 +38,7 @@ def add_jvm_args_as_necessary(argv, set_gc_option=True):
 def jgo_paintera():
     argv               = sys.argv[1:]
     double_dash_index  = [i for (i, arg) in enumerate(argv) if arg == '--'][0] if '--' in argv else -1
-    jgo_and_jvm_argv  = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jgorc']
+    jgo_and_jvm_argv   = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jgorc']
     repository_strings = ['-r'] + ['{}={}'.format(k, v) for (k, v) in repositories.items()]
     endpoint           = ['org.janelia.saalfeldlab:paintera:{}+{}'.format(__paintera_version__, os.getenv('PAINTERA_SLF4J_BINDING', 'org.slf4j:slf4j-simple:{}'.format(__slf4j_version__)))]
     paintera_argv      = argv if double_dash_index < 0 else argv[double_dash_index+1:]
@@ -49,7 +49,7 @@ def jgo_paintera():
 def jgo_paintera_show_container():
     argv               = sys.argv[1:]
     double_dash_index  = [i for (i, arg) in enumerate(argv) if arg == '--'][0] if '--' in argv else -1
-    jgo_and_jvm_argv  = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jgorc']
+    jgo_and_jvm_argv   = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jgorc']
     repository_strings = ['-r'] + ['{}={}'.format(k, v) for (k, v) in repositories.items()]
     endpoint           = ['org.janelia.saalfeldlab:paintera:{}:{}+{}'.format(__paintera_version__, __paintera_show_container__, os.getenv('PAINTERA_SLF4J_BINDING', 'org.slf4j:slf4j-simple:{}'.format(__slf4j_version__)))]
     paintera_argv      = argv if double_dash_index < 0 else argv[double_dash_index+1:]
@@ -60,7 +60,7 @@ def jgo_paintera_show_container():
 def jgo_paintera_conversion_helper():
     argv                   = sys.argv[1:]
     double_dash_index      = [i for (i, arg) in enumerate(argv) if arg == '--'][0] if '--' in argv else -1
-    jgo_and_jvm_argv      = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jgorc']
+    jgo_and_jvm_argv       = ([] if double_dash_index < 0 else argv[:double_dash_index]) + ['--ignore-jgorc']
     repository_strings     = ['-r'] + ['{}={}'.format(k, v) for (k, v) in repositories.items()]
     endpoint               = ['org.janelia.saalfeldlab:paintera-conversion-helper:{}'.format(__paintera_conversion_helper_version__)]
     spark_master           = ['-Dspark.master={}'.format(os.getenv('SPARK_MASTER', 'local[*]'))]
