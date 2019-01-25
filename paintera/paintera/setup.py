@@ -3,7 +3,7 @@ from distutils.command.build_py import build_py
 
 setup(
     name='paintera',
-    version='0.9.0',
+    version='0.9.2',
     author='Philipp Hanslovsky',
     author_email='hanslovskyp@janelia.hhmi.org',
     description='paintera',
