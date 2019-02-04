@@ -8,7 +8,7 @@ repositories = {
     'imagej.public' : 'https://maven.imagej.net/content/groups/public'
     }
 
-_paintera_conversion_helper_version__ = '0.5.1'
+_paintera_conversion_helper_version__ = '0.5.2'
 
 def add_jvm_args_as_necessary(argv, set_gc_option=True):
     gc_option = '-XX:+UseConcMarkSweepGC'

@@ -1,13 +1,13 @@
 package:
   name: paintera-conversion-helper
 
-  version: 0.5.1
+  version: 0.5.2
 
 source:
   path: paintera_conversion_helper
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: pip install --no-deps .
   entry_points:
