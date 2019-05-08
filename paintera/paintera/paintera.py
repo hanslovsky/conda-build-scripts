@@ -3,7 +3,7 @@ import os
 import psutil
 import sys
 
-__paintera_version__        = '0.11.1'
+__paintera_version__        = '0.12.0'
 __slf4j_version__           = '1.7.25'
 __paintera_show_container__ = '@PainteraShowContainer'
 
