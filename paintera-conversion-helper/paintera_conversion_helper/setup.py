@@ -3,7 +3,7 @@ from distutils.command.build_py import build_py
 
 setup(
     name='paintera-conversion-helper',
-    version='0.5.2',
+    version='0.6.1',
     author='Philipp Hanslovsky',
     author_email='hanslovskyp@janelia.hhmi.org',
     description='paintera-conversion-helper',
